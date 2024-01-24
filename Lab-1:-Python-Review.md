@@ -5,7 +5,7 @@ The goal of this lab was to reviews important concepts in python.
 # Overview
 ```python
 
-## Functions
+ ## Functions
 ```python
 def addone(x):
     """ add one to the input number """
