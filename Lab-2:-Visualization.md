@@ -52,69 +52,47 @@ plt.imshow(myimage)
 ```
 <img width="552" alt="Screen Shot 2024-02-02 at 11 27 43 AM" src="https://github.com/kobestenson/COMPPHYS/assets/156839835/6af1d02a-dfc0-4fd5-988f-43379f4370cf">
 
+We can also use files from google drive by:
+
 ```python
-for numbers in range(0,11,2):
-  print(numbers)
+from google.colab import files
+uploaded = files.upload()
 ```
 
-## Conditionals
-For our conditionals, we learned how to use if, elif, and else statements to demand specific outputs during the execution of the program. This allows us to test what each result would be for the conditions we set.
+## Fitting a Straight Line
+This section is very important for graphing data. We are able to create best-fit lines to show the average slope and trends of the data.
 ```python
-x = 25 * 32
-y = 17 * 49
+c = np.polyfit(x,y,1)
 
-if x > y:
-    print("The product of 25*32 is larger.")
-elif x < y:
-    print("The product of 17*49 is larger.")
+xline = np.linspace(xmin,xmax,100)
+yline = np.polyval(c,xline)
 ```
 
 
-## Functions
-Functions allow us to take an argument, and then return a value through the function we create. In this case, our function is called feet2miles, and our argument is feet. e are looking to return miles.
+## Histograms
 ```python
-feet=100
+plt.figure(figsize=(8,6))
 
-def feet2miles(feet):
-    miles = feet / 5280
-    return miles
+gauss_values = np.random.normal(size=100)
+plt.hist(gauss_values,color='black')
+print("average value = {:.2f}".format(np.mean(gauss_values)))
+print("the STD = {:.2f}".format(np.std(gauss_values)))
 
-m = feet2miles(5280)
-print(m) # Should be 1
+plt.axvline(np.mean(gauss_values),color='red',label='Average') # added line at average
 
-m = feet2miles(1)
-print(m)
+plt.axvline(np.mean(gauss_values)+np.std(gauss_values),color='green',label='Std') # average + std
 
-m = feet2miles(1000)
-print(m)
+plt.axvline(np.mean(gauss_values)-np.std(gauss_values),color='green',label='Std')# average - std
 ```
+<img width="665" alt="Screen Shot 2024-02-02 at 11 37 32 AM" src="https://github.com/kobestenson/COMPPHYS/assets/156839835/90db0fe1-d158-49f6-a4c5-1341b17272b9">
+
 # Important Figures
-In our first figure, we were able to plot a problem where a person threw a ball from a height of 50 meters high. Our graphs are a representation of what this problem may look like graphically using the corresponding kinematics equations. 
+## HR Diagram Plot
+This is an important representation of what to expect from graphing data that is collected from a file.
+<img width="618" alt="Screen Shot 2024-02-02 at 11 40 17 AM" src="https://github.com/kobestenson/COMPPHYS/assets/156839835/acfc731a-7f64-461a-b7a0-58f19f8e9ea7">
 
-## Kinematics Code
-```python
-y0=50
-v = 15
-g = 9.8
+## Polar Plot
 
-def height(t): # note: do not use the word time
-    return y0 + v*t - 0.5*g*t**2
-
-def velocity(t):
-    return v - g*t
-
-def acceleration(t):
-    return -g*np.ones(len(t))
-
-time_values = np.linspace(0, np.sqrt(2*50/9.8), 100)
-
-height_values = height(time_values)
-velocity_values = velocity(time_values)
-acceleration_values = acceleration(time_values)
-```
-To graph these equations side by side, we can use the subplot feature as a better visual comparison of position, velocity, and the acceleration curves. 
-
-<img width="996" alt="Screen Shot 2024-01-28 at 10 23 38 PM" src="https://github.com/kobestenson/COMPPHYS/assets/156839835/944001ed-a418-4811-bbc9-13977a7c666d">
 
 ## Sin(theta) and Cos(theta)
 In the last section of the lab, we are expected to graph sine and cosine as a function of theta. We are also given the range of 0 to 2pi. In our code this is given by ```np.linspace``` which set the range by (lower limit, upper limit, # of samples within the intervals).
@@ -124,6 +102,8 @@ sin = np.sin(theta)
 cos = np.cos(theta)
 
 plt.subplot(2,1,1)
+
+
 plt.plot(theta, sin, label='sin(theta)')
 plt.title('Sine Graph')
 plt.ylabel('sin(theta)')
