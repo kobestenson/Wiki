@@ -42,16 +42,16 @@ star_data = np.loadtxt('stars.txt')
 The "!wget" command allows us to download a dataset, "!ls" shows the contents of the directory, and "np.loadtxt" allows us read in the data.
 
 ## Displaying Images
-This uses the process from above, 
-### While
+This uses the process from above, and then uses ```python image.imread```
 ```python
-starting_num = 0
+!wget http://www.envisionarchitects.com/files/9615/5017/1251/Siena_Obs_3.jpg
 
-while starting_num <= 10:
-  print(f"num = {starting_num}")
-  starting_num = starting_num + 2
+myimage = image.imread("Siena_Obs_3.jpg")
+
+plt.imshow(myimage)
 ```
-### For
+<img width="552" alt="Screen Shot 2024-02-02 at 11 27 43 AM" src="https://github.com/kobestenson/COMPPHYS/assets/156839835/6af1d02a-dfc0-4fd5-988f-43379f4370cf">
+
 ```python
 for numbers in range(0,11,2):
   print(numbers)
