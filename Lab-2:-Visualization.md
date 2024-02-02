@@ -70,6 +70,7 @@ yline = np.polyval(c,xline)
 
 
 ## Histograms
+Histograms are important to look at the distribution of values over a specific quantity. In our case, we generated 100 random values to help show the mean and standard deviation as well.
 ```python
 plt.figure(figsize=(8,6))
 
@@ -139,7 +140,7 @@ This is useful for plotting graphs side-by-side.
 <img width="629" alt="Screen Shot 2024-02-02 at 11 48 16 AM" src="https://github.com/kobestenson/COMPPHYS/assets/156839835/dc1ccded-3a31-4231-8cf5-0138206e8273">
 
 ## 3D Plots
-An important reminder for 3D plots is to keep the projection equal to '3d':
+3D plots allow us to see the physical motion of the data. An important reminder for 3D plots is to keep the projection equal to '3d':
 ```python
 ax = plt.axes(projection = '3d')
 ```
