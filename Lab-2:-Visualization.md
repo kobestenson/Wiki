@@ -92,29 +92,55 @@ This is an important representation of what to expect from graphing data that is
 <img width="618" alt="Screen Shot 2024-02-02 at 11 40 17 AM" src="https://github.com/kobestenson/COMPPHYS/assets/156839835/acfc731a-7f64-461a-b7a0-58f19f8e9ea7">
 
 ## Polar Plot
-
-
-## Sin(theta) and Cos(theta)
-In the last section of the lab, we are expected to graph sine and cosine as a function of theta. We are also given the range of 0 to 2pi. In our code this is given by ```np.linspace``` which set the range by (lower limit, upper limit, # of samples within the intervals).
+Below is an example taken from matplotlib.org. We used the code below to print a line plot and what the sine and cosine of theta would look like.
 ```python
-theta = np.linspace(0, 2*np.pi, 100) # 0<=theta<=2pi
-sin = np.sin(theta)
-cos = np.cos(theta)
+r = np.arange(0, 2, 0.01)
+theta = 2 * np.pi * r
 
-plt.subplot(2,1,1)
+fig, ax = plt.subplots(subplot_kw={'projection': 'polar'})
+ax.plot(theta, r)
+ax.set_rmax(2)
+ax.set_rticks([0.5, 1, 1.5, 2])  # Less radial ticks
+ax.set_rlabel_position(-22.5)  # Move radial labels away from plotted line
+ax.grid(True)
 
-
-plt.plot(theta, sin, label='sin(theta)')
-plt.title('Sine Graph')
-plt.ylabel('sin(theta)')
-plt.legend()
-
-plt.subplot(2,1,2)
-plt.plot(theta, cos, label='cos(theta)')
-plt.title('Cosine Graph')
-plt.xlabel('Theta (in radians)')
-plt.ylabel('cos(theta)')
-plt.legend()
+ax.set_title("A line plot on a polar axis", va='bottom')
+plt.show()
 ```
+<img width="452" alt="Screen Shot 2024-02-02 at 11 43 57 AM" src="https://github.com/kobestenson/COMPPHYS/assets/156839835/7ac57efd-bb15-4989-bb9a-2893dcbc9388">
 
-<img width="579" alt="Screen Shot 2024-01-28 at 10 24 52 PM" src="https://github.com/kobestenson/COMPPHYS/assets/156839835/da4611f5-4a2a-4d98-b703-f6f40e2067a9">
+```python
+theta = np.linspace(0,2*np.pi,200)
+r = np.sin(theta)
+
+fig, ax = plt.subplots(subplot_kw={'projection': 'polar'},figsize=(6,6))
+ax.plot(theta, r, label='sin(theta)')
+
+# enter code to plot cos(theta)
+r_cos = np.cos(theta)
+ax.plot(theta, r_cos, label='cos(theta)')
+
+ax.set_rticks([0.25, .5, .75,1])  # Less radial ticks
+ax.set_rlabel_position(-22.5)
+ax.grid(True)
+
+ax.legend()
+
+plt.show()
+```
+<img width="544" alt="Screen Shot 2024-02-02 at 11 45 50 AM" src="https://github.com/kobestenson/COMPPHYS/assets/156839835/5820a730-532c-498c-92f5-87e22bfc45d1">
+
+## Multipanel Plot
+We have used the subplot feature in previous classes using the code:
+```python
+plt.subplot(2,2,1)
+```
+This is useful for plotting graphs side-by-side.
+<img width="629" alt="Screen Shot 2024-02-02 at 11 48 16 AM" src="https://github.com/kobestenson/COMPPHYS/assets/156839835/dc1ccded-3a31-4231-8cf5-0138206e8273">
+
+## 3D Plots
+An important reminder for 3D plots is to keep the projection equal to '3d':
+```python
+ax = plt.axes(projection = '3d')
+```
+<img width="404" alt="Screen Shot 2024-02-02 at 11 50 07 AM" src="https://github.com/kobestenson/COMPPHYS/assets/156839835/35b73df0-f698-4f5e-9506-eae557eabe3f">
