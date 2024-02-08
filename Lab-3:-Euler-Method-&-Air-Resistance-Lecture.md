@@ -5,9 +5,10 @@ An ordinary differential equation (ODE) is an equation that relates a function w
 
 ## Taylor Expansion
 The Taylor expansion is an approximation of a function near a given point by an infinite sum of terms of its derivatives. The general form is, where f(x) is the function and "a" is the point:
-$f(x) = f(a) + f'(a)(x-a) + \frac{f"(a)}{2!}(x-a)^2 + \frac{f'''(a)}{3!}(x-a)^2 ...$
+$f(x) = f(a) + f'(a)(x-a) + \frac{f"(a)}{2!}(x-a)^2 + \frac{f'''(a)}{3!}(x-a)^3 ...$
 
 ## Euler Method
+The Euler method is used to approximate solutions to the ODEs numerically. We find our solution by taking the derivatives and approximating for the function. The first order of the Euler method is $\frac{dy}{dx} = f(x_n,y_n)$
 
 # In The Lab & Lecture
 
