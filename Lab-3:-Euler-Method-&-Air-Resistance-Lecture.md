@@ -8,7 +8,7 @@ The Taylor expansion is an approximation of a function near a given point by an 
 $f(x) = f(a) + f'(a)(x-a) + \frac{f"(a)}{2!}(x-a)^2 + \frac{f'''(a)}{3!}(x-a)^3 ...$
 
 ## Euler Method
-The Euler method is used to approximate solutions to the ODEs numerically. We find our solution by taking the derivatives and approximating for the function. The first order of the Euler method is $\frac{dy}{dx} = f(x_n,y_n)$ with an initial condition of $y(x_0) = y_0$. Our general form for the Euler method is $y_(n+1) = y_n + h*f(x_n,y_n)$ where $y_n$ is the approximation of $x_n$, $h$ is the time step, and $f(x_n,y_n)$ is the derivative of $y$ with respect to $x$.
+The Euler method is used to approximate solutions to the ODEs numerically. We find our solution by taking the derivatives and approximating for the function. The first order of the Euler method is $\frac{dy}{dx} = f(x_n,y_n)$ with an initial condition of $y(x_0) = y_0$. Our general form for the Euler method is $y_n_+_1 = y_n + h*f(x_n,y_n)$ where $y_n$ is the approximation of $x_n$, $h$ is the time step, and $f(x_n,y_n)$ is the derivative of $y$ with respect to $x$.
 
 # In The Lab & Lecture
 
