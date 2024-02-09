@@ -15,7 +15,7 @@ The Euler method is used to approximate solutions to the ODEs numerically. We fi
 ## Euler Method
 In the lab, we use the Euler method to calculate the number of radioactive nuclei that survive as a function of time. For our example, we used Uranium 235, but this could apply to any radioactive nuclei and/or radioactive decay. The differential equation we use to represent the decay is: 
 
-$\frac{dN){dt} = -\frac{N}{T}$ where T represents tau.
+$\frac{dN){dt} = \frac{-N}{T}$ where T represents tau.
 
 
 
