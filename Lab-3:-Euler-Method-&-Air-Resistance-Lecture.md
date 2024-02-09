@@ -17,6 +17,7 @@ In the lab, we use the Euler method to calculate the number of radioactive nucle
 
 $\frac{dN}{dt} = \frac{-N}{T}$ where T represents tau.
 
+We are able to use this function in our Taylor Expansion because our function is equal to: $N(t + \triangle(t)$
 
 
 ## Analytical Solution
