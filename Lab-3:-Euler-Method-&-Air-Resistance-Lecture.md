@@ -24,7 +24,7 @@ The Euler method in our case represents Uranium's half-life as the Taylor Expans
 ## Analytical Solution
 With our equation to represent decay, we use the steps we learned through the differential equations course to find our analytical solutions. The steps we take to find our solution is separation of variables, integration, and raising each side to its exponential. This gives us the analytical solution of: 
 
-$N(t) = N_0 * e^(-\frac{1}{T})$
+$N(t) = N_0 * e^-\frac{1}{T}$
 
 ## Effect of Time Step
 
