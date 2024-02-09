@@ -15,8 +15,6 @@ The Euler method is used to approximate solutions to the ODEs numerically. We fi
 ## Euler Method
 In the lab, we use the Euler method to calculate the number of radioactive nuclei that survive as a function of time. For our example, we used Uranium 235, but this could apply to any radioactive nuclei and/or radioactive decay. The differential equation we use to represent the decay is: 
 
-
-***
 $\frac{dN}{dt} = \frac{-N}{T}$ where T represents tau.
 
 We are able to use this function in our Taylor Expansion because our function is equal to: $N(t + \triangle t) = N(t) + \frac{dN}{dt}(\triangle t)$
@@ -27,6 +25,10 @@ The Euler method in our case represents Uranium's half-life as the Taylor Expans
 With our equation to represent decay, we use the steps we learned through the differential equations course to find our analytical solutions. The steps we take to find our solution is separation of variables, integration, and raising each side to its exponential. This gives us the analytical solution of: 
 
 $N(t) = N_0 * e^-\frac{1}{T}$
+
+Our analytical solution is important because it allows us to have a reference while making a comparison to our approximation made during the Euler method. This allows us to check our accuracy and precision. Connecting back to the lab, our approximation and analytical solution were shown side-by-side to show the accuracy of our Euler method
+
+<img width="1000" alt="Screen Shot 2024-02-08 at 7 36 15 PM" src="https://github.com/kobestenson/COMPPHYS/assets/156839835/42d2d62b-3266-4d2f-ba09-cc0c840f5598">
 
 ## Effect of Time Step
 
