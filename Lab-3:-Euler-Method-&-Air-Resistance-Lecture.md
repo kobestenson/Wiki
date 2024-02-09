@@ -38,3 +38,8 @@ Time step is very important to find making approximations during the use of the 
 As you can see, the as time steps become closer to 0, more data points are created, meaning the graph has a smoother line and set of data. This correlates to greater accuracy as well because the data is more similar to the analytical solutions graph. 
 
 ## Lecture
+In the lecture, we reinforced our understanding of the Euler method and why it may be so useful. We are able to take real world situations and approximate specific solutions that correspond to this problem. In our case, we approximated a bicyclists velocity over a certain period of time while also using the bicyclists power output. This is important because the Euler method is being used to compute complex problems. This allows the Euler method to become universal by factoring outside forces like air resistance. Below is my graph of using the Euler method while factoring no air resistance and air resistance:
+
+<img width="524" alt="Screen Shot 2024-02-08 at 8 02 24 PM" src="https://github.com/kobestenson/COMPPHYS/assets/156839835/854144cf-6861-480a-848b-f04624c8cb2a">
+
+Just like in the Lab, time step determines how accurate the results of the Euler method will be. One issue someone may face when determining a time step might be not knowing what size to use. In both the Lecture and Lab, we were given values to use for the time step, but if I weren't given a value for the time step, I would use trial and error and compare to my analytical solution or I would look at how accurate I would need to be for the problem given. 
