@@ -81,5 +81,36 @@ def calculate(x0,y0,v0x,v0y,B2,m,dt):
 
   return t, x, y, vx, vy
 ```
+# Plots
+Below is our plots for the returned values within our calculate function. We took our x and y positions/velocities and graphed them against time.
+<img width="825" alt="Screen Shot 2024-03-01 at 12 39 51 PM" src="https://github.com/kobestenson/COMPPHYS/assets/156839835/4ef099cc-cc01-4fb4-8bf9-32ff9e919062">
 
-<img width="825" alt="Screen Shot 2024-03-01 at 12 39 51 PM" src="https://github.com/kobestenson/COMPPHYS/assets/156839835/f3da41f6-e664-4dca-863f-887fd4a9d47c">
+We also created a plot to show the changes for each angle with air resistance still present:
+```python
+theta0_deg = np.arange(15,90,15)
+
+for mytheta in theta0_deg:
+  y0 = 100
+  x0 = 0
+  v0=150
+  v0x = v0*np.cos(np.radians(mytheta))
+  v0y = v0*np.sin(np.radians(mytheta))
+
+  t, x, y, vx, vy = calculate(x0,y0,v0x,v0y,myB2,m,dt)
+
+  plt.plot(x,y,label=r"theta = degrees".format(mytheta))
+  plt.plot(np.linspace(-10,50,100),np.linspace(100,100,100),'k-',alpha=0.5) #creates the box
+  plt.plot(np.linspace(50,50,100),np.linspace(-10,100,100),'k-',alpha=0.5) # ^^^
+  plt.fill_between([-10,50],-10,100,color='lightgrey') #creates the fill in the box
+
+plt.xlabel('X-position (m)')
+plt.ylabel('Y-position (m)')
+plt.title('Y-position vs X-position')
+plt.legend()
+```
+
+<img width="627" alt="Screen Shot 2024-03-01 at 12 45 07 PM" src="https://github.com/kobestenson/COMPPHYS/assets/156839835/0e7a3033-c5a0-4cdd-b8cd-e7a6f7896321">
+
+# Summary Questions
+
+The initial angle affects the height and distance. Angles lower than 45 degrees product small heights and greater distances, angles higher than 45 created greater heights and smaller distances. 45 degrees creates the third highest elevation while also creating the longest distance. The range values with air resistance are shorter than the range without air resistance because the force of drag is opposite of velocity which would force the ball to slow down.
