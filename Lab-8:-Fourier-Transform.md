@@ -25,3 +25,4 @@ This code allows use the frequency integral from the slides and created the grap
 
 ![download-9](https://github.com/kobestenson/COMPPHYS/assets/156839835/5b58e14f-f1f5-41b7-9b92-431e6cd43775)
 
+In the graph above, we see significant amplitudes around the frequencies of 0.3, 0.75, and 1.75. These frequencies are much smaller than the original frequencies of $\pi, 2\pi,$ and $4\pi$. 
